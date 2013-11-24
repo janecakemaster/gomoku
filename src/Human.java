@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/**
+ * Human class contains prompts for user input
+ */
 public class Human extends Agent {
 
 	Scanner scan;

@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * RandomAgent class has Random() to generate random moves
+ */
 public class RandomAgent extends Agent {
 
 	Random r;
@@ -17,6 +20,10 @@ public class RandomAgent extends Agent {
 		return move;
 	}
 
+	/**
+	 * Pick a random move from empty locations
+	 * @return move
+	 */
 	String pickMove() {
 		ArrayList<String> ems = new ArrayList<String>(board.getEmpties());
 		int size = ems.size();
@@ -24,5 +31,4 @@ public class RandomAgent extends Agent {
 			return ems.get(r.nextInt(size));
 		return "-1 -1";
 	}
-
 }

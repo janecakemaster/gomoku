@@ -1,11 +1,20 @@
 import java.util.Scanner;
 
+/**
+ * GomokuPlay class contains main method that plays the game.
+ */
 public class GomokuPlay {
+	/**
+	 * Main method. Parse command line arguments to get game settings
+	 * @param  args
+	 */
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int n = Integer.parseInt(args[0]); // size of board
 		int m = Integer.parseInt(args[1]); // length of winning chain
 		int g = Integer.parseInt(args[3]); // game mode
+
+		// human vs smart agent
 		if (g == 1) {
 			System.out
 					.println("Would you like to go first or second? Please enter 1 or 2");
@@ -99,6 +108,8 @@ public class GomokuPlay {
 				}
 			}
 		}
+
+		// random vs smart agent
 		if (g == 2) {
 			System.out
 					.println("Would you like the smart agent to go first or second? Please enter 1 or 2");
@@ -191,6 +202,8 @@ public class GomokuPlay {
 				}
 			}
 		}
+
+		// smart vs smart agent
 		if (g == 3) {
 			SmartAgent x = new SmartAgent(n, m, true);
 			SmartAgent o = new SmartAgent(n, m, false);
